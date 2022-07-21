@@ -17,7 +17,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+	    agent { label 'apache20'}
             steps {
+		sh 'ls'
                 echo 'Deploying....'
             }
         }
