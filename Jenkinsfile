@@ -25,7 +25,7 @@ pipeline {
 			    remote.user = 'root'
 			    remote.password = '12'
 			    remote.allowAnyHosts = true
-			    sshPut remote: remote, from: '.', into: '.'
+			    sshGet remote: remote, from: '.', into: '.'
 			    sh 'whoami'
 			   }
 		
