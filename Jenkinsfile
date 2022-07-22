@@ -18,7 +18,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		    script {def remote = [:]}
+		    script { 
+			    def remote = [:]
+			    withCredentials([sshUserPrivateKey(credentialsId: 'webserv', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')])
+			    sshPut remote: remote, from: '*', into: '.'
+			   }
 		
             }
         }
