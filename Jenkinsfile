@@ -25,7 +25,7 @@ pipeline {
 			    remote.user = 'root'
 			    remote.password = '12'
 			    remote.allowAnyHosts = true
-			    sshGet remote: remote, from: '.', into: '.'
+			    sshPut remote: remote, from: 'araj.css', into: '.'
 			    sh 'whoami'
 			   }
 		
