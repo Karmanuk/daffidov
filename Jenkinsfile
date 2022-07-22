@@ -22,7 +22,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-	    node {
+	    stage(porc) {
 			def remote = [:]
 			remote.name = 'root'
 			remote.host = '172.20.16.132'
