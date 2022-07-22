@@ -19,13 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
 		sh 'ls'
-                echo 'Deploying....'
-            }
-        }
-	    
-    }
-	node {
-			def remote = [:]
+		    def remote = [:]
 			remote.name = 'root'
 			remote.host = '172.20.16.132'
 			remote.password = '12'
@@ -33,5 +27,9 @@ pipeline {
 			stage(test) {
 			
 			}
-	}
+                echo 'Deploying....'
+            }
+        }
+	    
+    }
 }
