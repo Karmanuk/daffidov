@@ -20,10 +20,11 @@ pipeline {
             steps {
 		    script { 
 			    def remote = [:]
-			  
+			    remote.name = 'apache20'
 			    remote.host = '172.20.16.132'
 			    remote.user = 'root'
 			    remote.password = '12'
+			    remote.allowAnyHosts = true
 			    sh 'whoami'
 			   }
 		
