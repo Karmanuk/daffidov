@@ -23,7 +23,7 @@ pipeline {
 			    remote.host = '172.20.16.132'
 			    remote.user = 'root'
 			    remote.password = '12'
-			    sshPut remote: remote, from: '*', into: '.'
+			    sshPut remote: remote, from: '.', into: '.'
 			   }
 		
             }
