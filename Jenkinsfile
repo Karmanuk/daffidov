@@ -24,7 +24,7 @@ pipeline {
         }
 	    
     }
-	node {
+	agent { node {
 			def remote = [:]
 			remote.name = 'root'
 			remote.host = '172.20.16.132'
@@ -33,5 +33,5 @@ pipeline {
 			stage(test) {
 			
 			}
-		}
+	}}
 }
