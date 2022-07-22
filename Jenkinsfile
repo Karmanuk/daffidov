@@ -22,5 +22,14 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+	stage('upload server') {
+		def remote = [:]
+		remote.name = 'root'
+		remote.host = '172.20.16.132'
+		remote.password = '12'
+		remote.allowAnyHosts = true
+		sh 'systemctl restart apache2'
+
+	}
     }
 }
